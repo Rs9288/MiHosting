@@ -276,3 +276,70 @@ button{
     background:linear-gradient(90deg,var(--primary),var(--secondary));
 
 }
+/*==================================
+ TOP BAR
+==================================*/
+
+.topbar{
+
+    width:100%;
+
+    background:linear-gradient(90deg,#0A84FF,#00C8FF);
+
+    color:white;
+
+    height:42px;
+
+    display:flex;
+
+    align-items:center;
+
+    font-size:14px;
+
+    font-weight:500;
+
+}
+
+.topbar-content{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+
+.topbar strong{
+
+    color:white;
+
+}
+
+.topbar b{
+
+    font-weight:700;
+
+}
+
+.topbar-links{
+
+    display:flex;
+
+    gap:25px;
+
+}
+
+.topbar-links a{
+
+    opacity:.9;
+
+    transition:.25s;
+
+}
+
+.topbar-links a:hover{
+
+    opacity:1;
+
+}
