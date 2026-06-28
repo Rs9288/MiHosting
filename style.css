@@ -1420,3 +1420,15 @@ CTA
     flex-wrap:wrap;
 
 }
+.cta-buttons .btn-primary,
+.cta-buttons .btn-secondary{
+
+    min-width:190px;
+
+    justify-content:center;
+
+    display:inline-flex;
+
+    align-items:center;
+
+}
