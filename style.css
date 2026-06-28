@@ -861,3 +861,108 @@ button{
     line-height:1.7;
 
 }
+/*==================================
+ STATS
+==================================*/
+
+.stats{
+
+    padding:140px 0;
+
+}
+
+.stats-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:30px;
+
+    margin-top:70px;
+
+}
+
+.stat-card{
+
+    position:relative;
+
+    text-align:center;
+
+    padding:45px 25px;
+
+    border-radius:22px;
+
+    background:rgba(255,255,255,.03);
+
+    border:1px solid rgba(255,255,255,.06);
+
+    transition:.35s ease;
+
+    overflow:hidden;
+
+}
+
+.stat-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:linear-gradient(
+        135deg,
+        rgba(20,136,255,.12),
+        transparent 60%
+    );
+
+    opacity:0;
+
+    transition:.35s;
+
+}
+
+.stat-card:hover{
+
+    transform:translateY(-10px);
+
+    border-color:rgba(20,136,255,.25);
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,.35),
+        0 0 40px rgba(20,136,255,.12);
+
+}
+
+.stat-card:hover::before{
+
+    opacity:1;
+
+}
+
+.stat-card h3{
+
+    position:relative;
+
+    font-size:46px;
+
+    font-weight:800;
+
+    color:var(--primary);
+
+    margin-bottom:12px;
+
+}
+
+.stat-card span{
+
+    position:relative;
+
+    color:var(--gray);
+
+    font-size:16px;
+
+    line-height:1.6;
+
+}
