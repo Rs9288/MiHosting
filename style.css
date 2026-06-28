@@ -1793,6 +1793,8 @@ PLANES
 
     transition:.35s;
 
+    pointer-events:none;
+
 }
 
 .plan-card:hover{
@@ -2029,4 +2031,5 @@ PLANES
 
     z-index:20;
 
+}
 }
