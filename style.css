@@ -966,3 +966,212 @@ button{
     line-height:1.6;
 
 }
+/*==================================
+ PANEL SECTION
+==================================*/
+
+.panel-section{
+
+    padding:140px 0;
+
+}
+
+.panel-layout{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:90px;
+
+    align-items:center;
+
+}
+
+/*==============================
+MOCKUP PANEL
+==============================*/
+
+.dashboard{
+
+    background:linear-gradient(180deg,#121B30,#0B1120);
+
+    border:1px solid rgba(255,255,255,.06);
+
+    border-radius:28px;
+
+    padding:35px;
+
+    box-shadow:
+        0 30px 80px rgba(0,0,0,.45),
+        0 0 40px rgba(20,136,255,.08);
+
+}
+
+.dashboard-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:35px;
+
+}
+
+.dashboard-title h3{
+
+    font-size:28px;
+
+    margin-bottom:5px;
+
+}
+
+.dashboard-title span{
+
+    color:var(--gray);
+
+}
+
+.dashboard-menu{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:16px;
+
+}
+
+.menu-item{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+    padding:18px 20px;
+
+    border-radius:16px;
+
+    background:rgba(255,255,255,.03);
+
+    border:1px solid rgba(255,255,255,.05);
+
+    color:var(--gray);
+
+    transition:.30s;
+
+}
+
+.menu-item svg{
+
+    width:22px;
+
+    height:22px;
+
+    color:var(--primary);
+
+}
+
+.menu-item:hover{
+
+    transform:translateX(8px);
+
+    border-color:rgba(20,136,255,.25);
+
+    background:rgba(20,136,255,.08);
+
+    color:white;
+
+}
+
+.menu-item.active{
+
+    background:linear-gradient(90deg,var(--primary),var(--secondary));
+
+    color:white;
+
+}
+
+.menu-item.active svg{
+
+    color:white;
+
+}
+
+/*==============================
+INFO
+==============================*/
+
+.section-mini{
+
+    display:inline-block;
+
+    color:var(--primary);
+
+    font-weight:700;
+
+    margin-bottom:18px;
+
+    letter-spacing:.5px;
+
+    text-transform:uppercase;
+
+}
+
+.panel-info h2{
+
+    font-size:48px;
+
+    line-height:1.15;
+
+    margin-bottom:25px;
+
+}
+
+.panel-info p{
+
+    color:var(--gray);
+
+    line-height:1.9;
+
+    font-size:18px;
+
+    margin-bottom:40px;
+
+}
+
+.panel-list{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+
+}
+
+.panel-list div{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+    font-size:18px;
+
+}
+
+.panel-list svg{
+
+    width:22px;
+
+    height:22px;
+
+    color:#39FF88;
+
+}
