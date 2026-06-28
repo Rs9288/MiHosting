@@ -71,9 +71,9 @@ button{
 
 .hero{
 
-    min-height:100vh;
-    display:flex;
-    align-items:center;
+    padding:90px 0 120px;
+
+
 
 }
 
