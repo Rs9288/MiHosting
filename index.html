@@ -42,15 +42,17 @@
 
     <div class="container navbar-content">
 
-        <a href="#" class="logo">
+<a href="#" class="logo">
 
-            <div class="logo-box"></div>
+    <div class="logo-icon">
+        <i data-lucide="server"></i>
+    </div>
 
-            <div class="logo-text">
-                <span>Mi</span>Hosting
-            </div>
+    <div class="logo-text">
+        <span>Mi</span>Hosting
+    </div>
 
-        </a>
+</a>
 
         <ul class="nav-links">
 
@@ -82,9 +84,13 @@
 
         <div class="hero-left">
 
-            <span class="badge">
-                ⚡ Infraestructura de alto rendimiento
-            </span>
+            <div class="badge">
+
+    <i data-lucide="zap"></i>
+
+    <span>Infraestructura de alto rendimiento</span>
+
+</div>
 
             <h1>
                 Hosting de alto rendimiento para
@@ -109,26 +115,51 @@
 
             </div>
 
-            <div class="hero-stats">
+<div class="hero-stats">
 
-                <div>
-                    <h3>99.99%</h3>
-                    <span>Uptime</span>
-                </div>
+    <div class="stat">
 
-                <div>
-                    <h3>Ryzen</h3>
-                    <span>CPU Premium</span>
-                </div>
+        <i data-lucide="shield-check"></i>
 
-                <div>
-                    <h3>NVMe</h3>
-                    <span>SSD</span>
-                </div>
+        <div>
 
-            </div>
+            <h3>99.99%</h3>
+
+            <span>Uptime</span>
 
         </div>
+
+    </div>
+
+    <div class="stat">
+
+        <i data-lucide="cpu"></i>
+
+        <div>
+
+            <h3>Ryzen</h3>
+
+            <span>CPU Premium</span>
+
+        </div>
+
+    </div>
+
+    <div class="stat">
+
+        <i data-lucide="hard-drive"></i>
+
+        <div>
+
+            <h3>NVMe</h3>
+
+            <span>SSD Gen4</span>
+
+        </div>
+
+    </div>
+
+</div>
 
         <div class="hero-right">
 
@@ -203,62 +234,76 @@
 
         </div>
 
-        <div class="feature-grid">
+<div class="feature-grid">
 
-            <div class="feature-card">
+    <div class="feature-card">
 
-                <div class="feature-icon">⚡</div>
-
-                <h3>Procesadores Ryzen</h3>
-
-                <p>
-                    Equipos con alto rendimiento para mantener un TPS estable incluso con muchos jugadores.
-                </p>
-
-            </div>
-
-            <div class="feature-card">
-
-                <div class="feature-icon">💾</div>
-
-                <h3>Almacenamiento NVMe</h3>
-
-                <p>
-                    Cargas más rápidas, menor tiempo de inicio y mejor experiencia para tus jugadores.
-                </p>
-
-            </div>
-
-            <div class="feature-card">
-
-                <div class="feature-icon">🛡️</div>
-
-                <h3>Protección DDoS</h3>
-
-                <p>
-                    Tu servidor permanecerá protegido frente a ataques comunes.
-                </p>
-
-            </div>
-
-            <div class="feature-card">
-
-                <div class="feature-icon">🌎</div>
-
-                <h3>Baja Latencia</h3>
-
-                <p>
-                    Conectividad optimizada para ofrecer una experiencia estable.
-                </p>
-
-            </div>
-
+        <div class="feature-icon">
+            <i data-lucide="cpu"></i>
         </div>
+
+        <h3>Procesadores Ryzen</h3>
+
+        <p>
+            Equipos con alto rendimiento para mantener un TPS estable incluso con muchos jugadores.
+        </p>
+
+    </div>
+
+    <div class="feature-card">
+
+        <div class="feature-icon">
+            <i data-lucide="hard-drive"></i>
+        </div>
+
+        <h3>Almacenamiento NVMe</h3>
+
+        <p>
+            Cargas más rápidas, menor tiempo de inicio y mejor experiencia para tus jugadores.
+        </p>
+
+    </div>
+
+    <div class="feature-card">
+
+        <div class="feature-icon">
+            <i data-lucide="shield-check"></i>
+        </div>
+
+        <h3>Protección DDoS</h3>
+
+        <p>
+            Tu servidor permanecerá protegido frente a ataques comunes para garantizar la disponibilidad.
+        </p>
+
+    </div>
+
+    <div class="feature-card">
+
+        <div class="feature-icon">
+            <i data-lucide="activity"></i>
+        </div>
+
+        <h3>Baja Latencia</h3>
+
+        <p>
+            Conectividad optimizada para ofrecer una experiencia fluida y estable a tus jugadores.
+        </p>
+
+    </div>
+
+</div>
 
     </div>
 
 </section>
 
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+<script>
+    lucide.createIcons();
+</script>
 </body>
+    
 
 </html>
