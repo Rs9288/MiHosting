@@ -76,4 +76,41 @@
         </div>
 
     </div>
+
 </div>
+
+</footer>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+<script>
+    lucide.createIcons();
+</script>
+    <script>
+
+document.querySelectorAll(".faq-question").forEach(button => {
+
+    button.addEventListener("click", () => {
+
+        const current = button.parentElement;
+
+        document.querySelectorAll(".faq-item").forEach(item => {
+
+            if (item !== current) {
+                item.classList.remove("active");
+            }
+
+        });
+
+        current.classList.toggle("active");
+
+    });
+
+});
+
+</script>
+    
+</body>
+    
+
+</html>
