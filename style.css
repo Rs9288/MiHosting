@@ -343,3 +343,148 @@ button{
     opacity:1;
 
 }
+/*==================================
+ NAVBAR
+==================================*/
+
+.navbar{
+
+    position:sticky;
+    top:0;
+
+    z-index:1000;
+
+    backdrop-filter:blur(16px);
+
+    background:rgba(6,9,19,.70);
+
+    border-bottom:1px solid rgba(255,255,255,.05);
+
+}
+
+.navbar-content{
+
+    height:82px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+}
+
+.logo{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+}
+
+.logo-box{
+
+    width:42px;
+    height:42px;
+
+    border-radius:12px;
+
+    background:linear-gradient(135deg,var(--primary),var(--secondary));
+
+    box-shadow:0 0 30px rgba(20,136,255,.35);
+
+}
+
+.logo-text{
+
+    font-size:28px;
+
+    font-weight:700;
+
+}
+
+.logo-text span{
+
+    color:var(--primary);
+
+}
+
+.nav-links{
+
+    display:flex;
+
+    gap:40px;
+
+    list-style:none;
+
+}
+
+.nav-links a{
+
+    color:var(--gray);
+
+    transition:.3s;
+
+    font-weight:500;
+
+}
+
+.nav-links a:hover{
+
+    color:white;
+
+}
+
+.nav-buttons{
+
+    display:flex;
+
+    gap:16px;
+
+}
+
+.discord-btn{
+
+    padding:12px 22px;
+
+    border-radius:12px;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    background:rgba(255,255,255,.03);
+
+    transition:.3s;
+
+}
+
+.discord-btn:hover{
+
+    background:rgba(255,255,255,.06);
+
+}
+
+.panel-btn{
+
+    padding:12px 24px;
+
+    border-radius:12px;
+
+    background:linear-gradient(90deg,var(--primary),var(--secondary));
+
+    color:white;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.panel-btn:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:0 0 25px rgba(20,136,255,.35);
+
+}
