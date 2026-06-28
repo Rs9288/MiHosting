@@ -18,13 +18,15 @@
 </head>
 
 <body>
-    
+
 <div class="topbar">
 
     <div class="container topbar-content">
 
         <span>
-            🚀 Oferta de lanzamiento: <strong>15% de descuento</strong> con el código <b>MI15</b>
+            🚀 Oferta de lanzamiento:
+            <strong>15% de descuento</strong>
+            con el código <b>MI15</b>
         </span>
 
         <div class="topbar-links">
@@ -42,22 +44,22 @@
 
     <div class="container navbar-content">
 
-<a href="#" class="logo">
+        <a href="index.html" class="logo">
 
-    <div class="logo-icon">
-        <i data-lucide="server"></i>
-    </div>
+            <div class="logo-icon">
+                <i data-lucide="server"></i>
+            </div>
 
-    <div class="logo-text">
-        <span>Mi</span>Hosting
-    </div>
+            <div class="logo-text">
+                <span>Mi</span>Hosting
+            </div>
 
-</a>
+        </a>
 
         <ul class="nav-links">
 
-            <li><a href="index.html">Inicio</a>
-            <li><a href="planes.html">Planes</a>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="planes.html">Planes</a></li>
             <li><a href="#">VPS</a></li>
             <li><a href="#">Dedicados</a></li>
 
@@ -77,40 +79,123 @@
 
     </div>
 
-</div>
+</nav>
 
-</footer>
+<header class="plans-hero">
 
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <div class="container">
+
+        <span class="badge">
+            Elige tu infraestructura
+        </span>
+
+        <h1>
+            Encuentra el plan perfecto para tu servidor.
+        </h1>
+
+        <p>
+            Dos gamas diseñadas para ofrecer el mejor rendimiento,
+            desde comunidades en crecimiento hasta proyectos de gran escala.
+        </p>
+
+    </div>
+
+</header>
+
+<section class="plans">
+
+    <div class="container">
+
+        <div class="plans-grid">
+
+            <!-- STANDARD -->
+
+            <div class="plan-category">
+
+                <div class="plan-icon">
+
+                    <!-- Emoji Standard -->
+
+                </div>
+
+                <h2>Standard</h2>
+
+                <p>
+                    Ideal para servidores pequeños y medianos con un excelente equilibrio entre rendimiento y estabilidad.
+                </p>
+
+                <div class="plan-features">
+
+                    <div>🚀 Procesadores Ryzen</div>
+
+                    <div>💾 NVMe SSD</div>
+
+                    <div>🛡️ Protección DDoS</div>
+
+                    <div>🌎 Baja latencia</div>
+
+                    <div>⚡ Hardware optimizado</div>
+
+                </div>
+
+                <a href="#" class="btn-primary">
+                    Ver Planes
+                </a>
+
+            </div>
+
+            <!-- ADVANCED -->
+
+            <div class="plan-category featured">
+
+                <span class="featured-tag">
+                    Recomendado
+                </span>
+
+                <div class="plan-icon">
+
+                    <!-- Emoji Advanced -->
+
+                </div>
+
+                <h2>Advanced</h2>
+
+                <p>
+                    Diseñado para comunidades grandes, redes y proyectos que requieren el máximo rendimiento disponible.
+                </p>
+
+                <div class="plan-features">
+
+                    <div>🔥 Ryzen Premium</div>
+
+                    <div>⚡ Máxima potencia</div>
+
+                    <div>💾 NVMe SSD Premium</div>
+
+                    <div>🛡️ Protección DDoS</div>
+
+                    <div>👑 Infraestructura de alto nivel</div>
+
+                </div>
+
+                <a href="#" class="btn-primary">
+                    Ver Planes
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<script src="https://unpkg.com/lucide@latest"></script>
 
 <script>
     lucide.createIcons();
 </script>
-    <script>
 
-document.querySelectorAll(".faq-question").forEach(button => {
-
-    button.addEventListener("click", () => {
-
-        const current = button.parentElement;
-
-        document.querySelectorAll(".faq-item").forEach(item => {
-
-            if (item !== current) {
-                item.classList.remove("active");
-            }
-
-        });
-
-        current.classList.toggle("active");
-
-    });
-
-});
-
-</script>
-    
 </body>
-    
 
 </html>
