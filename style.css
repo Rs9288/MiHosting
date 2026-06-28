@@ -488,3 +488,122 @@ button{
     box-shadow:0 0 25px rgba(20,136,255,.35);
 
 }
+/*==========================
+ PANEL PREMIUM
+==========================*/
+
+.panel-card{
+
+    width:460px;
+
+    padding:35px;
+
+    border-radius:28px;
+
+    background:
+    linear-gradient(
+        180deg,
+        rgba(18,28,48,.95),
+        rgba(10,15,28,.95)
+    );
+
+    border:1px solid rgba(255,255,255,.06);
+
+    box-shadow:
+    0 30px 80px rgba(0,0,0,.45);
+
+    backdrop-filter:blur(18px);
+
+}
+
+.panel-top{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:35px;
+
+}
+
+.server-info h3{
+
+    font-size:28px;
+
+    margin-bottom:5px;
+
+}
+
+.server-info span{
+
+    color:var(--gray);
+
+}
+
+.status-online{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    color:#66FF99;
+
+    font-weight:600;
+
+}
+
+.online-dot{
+
+    width:10px;
+
+    height:10px;
+
+    border-radius:50%;
+
+    background:#41FF8F;
+
+    box-shadow:0 0 15px #41FF8F;
+
+}
+
+.specs{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:20px;
+
+}
+
+.spec{
+
+    padding:18px;
+
+    border-radius:16px;
+
+    background:rgba(255,255,255,.03);
+
+    border:1px solid rgba(255,255,255,.05);
+
+}
+
+.spec span{
+
+    display:block;
+
+    color:var(--gray);
+
+    margin-bottom:8px;
+
+}
+
+.spec strong{
+
+    font-size:18px;
+
+}
