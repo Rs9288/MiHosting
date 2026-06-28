@@ -1,43 +1,67 @@
+/* ===================================
+   MiHosting - Base
+=================================== */
+
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
 }
 
-body{
+:root{
 
-    min-height:100vh;
+    --background:#060913;
+    --surface:#0D1323;
+    --surface2:#131C31;
 
-    font-family:Inter,sans-serif;
+    --primary:#1488FF;
+    --secondary:#28C5FF;
 
-    color:white;
-
-    background:
-    radial-gradient(circle at 15% 20%, rgba(0,120,255,.28), transparent 28%),
-    radial-gradient(circle at 85% 15%, rgba(0,210,255,.20), transparent 25%),
-    radial-gradient(circle at 50% 80%, rgba(0,80,255,.18), transparent 35%),
-    linear-gradient(135deg,#050816 0%,#081223 45%,#0B1733 100%);
-
-    overflow-x:hidden;
+    --white:#FFFFFF;
+    --gray:#A9B3C8;
 
 }
 
-body::before{
+html{
 
-    content:"";
+    scroll-behavior:smooth;
 
-    position:fixed;
+}
 
-    inset:0;
+body{
 
-    background-image:
-    linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px);
+    font-family:'Inter',sans-serif;
+    color:var(--white);
+    min-height:100vh;
+    overflow-x:hidden;
 
-    background-size:55px 55px;
+    background:
+    radial-gradient(circle at 15% 0%, rgba(20,136,255,.10), transparent 30%),
+    radial-gradient(circle at 90% 20%, rgba(40,197,255,.08), transparent 25%),
+    linear-gradient(180deg,#05070E 0%,#08101C 45%,#05070E 100%);
 
-    pointer-events:none;
+}
 
-    z-index:-1;
+/* Contenedor */
+
+.container{
+
+    width:min(1200px,92%);
+    margin:auto;
+
+}
+
+a{
+
+    color:inherit;
+    text-decoration:none;
+
+}
+
+button{
+
+    border:none;
+    font-family:inherit;
+    cursor:pointer;
 
 }
