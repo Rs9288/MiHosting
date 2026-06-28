@@ -171,6 +171,12 @@ button{
 
 .btn-primary{
 
+.btn-primary{
+
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
     background:linear-gradient(135deg,var(--primary),var(--secondary));
 
     color:#fff;
@@ -181,7 +187,19 @@ button{
 
     font-weight:600;
 
+    text-decoration:none;
+
+    cursor:pointer;
+
     transition:.30s;
+
+}
+
+.btn-primary:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:0 15px 35px rgba(20,136,255,.30);
 
 }
 
