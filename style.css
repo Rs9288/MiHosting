@@ -1175,3 +1175,114 @@ INFO
     color:#39FF88;
 
 }
+/*==================================
+FAQ
+==================================*/
+
+.faq{
+
+    padding:140px 0;
+
+}
+
+.faq-container{
+
+    max-width:900px;
+
+    margin:70px auto 0;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+
+}
+
+.faq-item{
+
+    border-radius:18px;
+
+    background:rgba(255,255,255,.03);
+
+    border:1px solid rgba(255,255,255,.06);
+
+    overflow:hidden;
+
+    transition:.3s;
+
+}
+
+.faq-item:hover{
+
+    border-color:rgba(20,136,255,.25);
+
+}
+
+.faq-question{
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:25px 30px;
+
+    background:none;
+
+    color:white;
+
+    font-size:18px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+}
+
+.faq-question svg{
+
+    width:22px;
+
+    height:22px;
+
+    color:var(--primary);
+
+    transition:.3s;
+
+}
+
+.faq-answer{
+
+    max-height:0;
+
+    overflow:hidden;
+
+    transition:max-height .35s ease;
+
+}
+
+.faq-answer p{
+
+    padding:0 30px 25px;
+
+    color:var(--gray);
+
+    line-height:1.8;
+
+}
+
+.faq-item.active .faq-answer{
+
+    max-height:180px;
+
+}
+
+.faq-item.active .faq-question svg{
+
+    transform:rotate(45deg);
+
+}
