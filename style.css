@@ -607,3 +607,116 @@ button{
     font-size:18px;
 
 }
+/*==========================
+ FEATURES
+==========================*/
+
+.features{
+
+    padding:140px 0;
+
+}
+
+.section-title{
+
+    text-align:center;
+
+    max-width:700px;
+
+    margin:auto auto 70px;
+
+}
+
+.section-title span{
+
+    color:var(--primary);
+
+    font-weight:600;
+
+}
+
+.section-title h2{
+
+    font-size:46px;
+
+    margin:18px 0;
+
+}
+
+.section-title p{
+
+    color:var(--gray);
+
+}
+
+.feature-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:28px;
+
+}
+
+.feature-card{
+
+    background:rgba(255,255,255,.03);
+
+    border:1px solid rgba(255,255,255,.06);
+
+    border-radius:22px;
+
+    padding:35px;
+
+    transition:.35s;
+
+}
+
+.feature-card:hover{
+
+    transform:translateY(-8px);
+
+    border-color:rgba(20,136,255,.35);
+
+    box-shadow:0 15px 45px rgba(20,136,255,.12);
+
+}
+
+.feature-icon{
+
+    width:65px;
+
+    height:65px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:30px;
+
+    border-radius:18px;
+
+    background:linear-gradient(135deg,var(--primary),var(--secondary));
+
+    margin-bottom:25px;
+
+}
+
+.feature-card h3{
+
+    margin-bottom:15px;
+
+    font-size:22px;
+
+}
+
+.feature-card p{
+
+    color:var(--gray);
+
+    line-height:1.7;
+
+}
