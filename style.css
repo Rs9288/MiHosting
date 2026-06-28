@@ -1,7 +1,43 @@
-body {
-    background: red;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-h1 {
-    color: white;
+body{
+
+    min-height:100vh;
+
+    font-family:Inter,sans-serif;
+
+    color:white;
+
+    background:
+    radial-gradient(circle at 15% 20%, rgba(0,120,255,.28), transparent 28%),
+    radial-gradient(circle at 85% 15%, rgba(0,210,255,.20), transparent 25%),
+    radial-gradient(circle at 50% 80%, rgba(0,80,255,.18), transparent 35%),
+    linear-gradient(135deg,#050816 0%,#081223 45%,#0B1733 100%);
+
+    overflow-x:hidden;
+
+}
+
+body::before{
+
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    background-image:
+    linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px);
+
+    background-size:55px 55px;
+
+    pointer-events:none;
+
+    z-index:-1;
+
 }
