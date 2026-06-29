@@ -2296,7 +2296,7 @@ CONFIGURADOR
 
     display:grid;
 
-    grid-template-columns:2fr 1fr;
+    grid-template-columns:2.2fr 1fr;
 
     gap:35px;
 
@@ -2304,10 +2304,14 @@ CONFIGURADOR
 
 }
 
+    
 /* TARJETAS */
 
-.builder-card,
-.builder-summary{
+.builder-card{
+
+    padding:45px;
+
+    border-radius:28px;
 
     background:linear-gradient(
         180deg,
@@ -2317,9 +2321,25 @@ CONFIGURADOR
 
     border:1px solid rgba(255,255,255,.06);
 
-    border-radius:26px;
+}
 
-    padding:40px;
+.builder-summary{
+
+    padding:45px;
+
+    border-radius:28px;
+
+    background:linear-gradient(
+        180deg,
+        rgba(18,28,48,.95),
+        rgba(10,15,28,.95)
+    );
+
+    border:1px solid rgba(255,255,255,.06);
+
+    position:sticky;
+
+    top:120px;
 
 }
 
@@ -2336,10 +2356,9 @@ CONFIGURADOR
 
 .builder-option{
 
-    margin-bottom:40px;
+    margin-bottom:55px;
 
 }
-
 .builder-option h4{
 
     font-size:18px;
@@ -2356,7 +2375,7 @@ CONFIGURADOR
 
     flex-wrap:wrap;
 
-    gap:14px;
+    gap:16px;
 
 }
 
@@ -2485,5 +2504,46 @@ CONFIGURADOR
         grid-template-columns:1fr;
 
     }
+
+}
+.custom-hero{
+
+    padding:120px 0 80px;
+
+    text-align:center;
+
+}
+
+.custom-hero .badge{
+
+    margin:0 auto 30px;
+
+}
+
+.custom-hero h2{
+
+    font-size:58px;
+
+    font-weight:800;
+
+    max-width:800px;
+
+    margin:auto;
+
+    line-height:1.1;
+
+}
+
+.custom-hero p{
+
+    max-width:750px;
+
+    margin:30px auto 0;
+
+    font-size:20px;
+
+    line-height:1.8;
+
+    color:var(--gray);
 
 }
