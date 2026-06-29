@@ -2033,3 +2033,252 @@ PLANES
 
 }
 }
+/*==================================
+PRICING
+==================================*/
+
+.pricing{
+
+    padding:40px 0 120px;
+
+}
+
+.pricing-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(360px,1fr));
+
+    gap:35px;
+
+}
+
+/* TARJETA */
+
+.pricing-card{
+
+    background:linear-gradient(
+        180deg,
+        rgba(18,28,48,.96),
+        rgba(10,15,28,.96)
+    );
+
+    border:1px solid rgba(255,255,255,.06);
+
+    border-radius:28px;
+
+    padding:40px;
+
+    transition:.35s;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.pricing-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:radial-gradient(
+        circle at top right,
+        rgba(20,136,255,.12),
+        transparent 45%
+    );
+
+    opacity:0;
+
+    transition:.35s;
+
+}
+
+.pricing-card:hover{
+
+    transform:translateY(-8px);
+
+    border-color:rgba(20,136,255,.35);
+
+    box-shadow:
+    0 25px 60px rgba(0,0,0,.45),
+    0 0 35px rgba(20,136,255,.10);
+
+}
+
+.pricing-card:hover::before{
+
+    opacity:1;
+
+}
+
+/* HEADER */
+
+.plan-header{
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+.plan-type{
+
+    display:inline-block;
+
+    padding:8px 16px;
+
+    border-radius:999px;
+
+    background:rgba(20,136,255,.10);
+
+    border:1px solid rgba(20,136,255,.20);
+
+    color:#8CCBFF;
+
+    font-size:14px;
+
+    margin-bottom:18px;
+
+}
+
+.plan-header h2{
+
+    font-size:38px;
+
+    margin-bottom:15px;
+
+}
+
+.plan-header p{
+
+    color:var(--gray);
+
+    line-height:1.7;
+
+}
+
+/* ESPECIFICACIONES */
+
+.plan-specs{
+
+    margin:35px 0;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:16px;
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+.spec-item{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:16px;
+
+    padding:15px 18px;
+
+    border-radius:16px;
+
+    background:rgba(255,255,255,.03);
+
+    border:1px solid rgba(255,255,255,.05);
+
+    transition:.30s;
+
+}
+
+.spec-item:hover{
+
+    background:rgba(20,136,255,.08);
+
+    border-color:rgba(20,136,255,.25);
+
+}
+
+.spec-item svg{
+
+    width:22px;
+
+    height:22px;
+
+    color:var(--primary);
+
+    flex-shrink:0;
+
+}
+
+/* PRECIO */
+
+.plan-price{
+
+    text-align:center;
+
+    margin-bottom:35px;
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+.plan-price small{
+
+    display:block;
+
+    color:var(--gray);
+
+    margin-bottom:8px;
+
+    text-transform:uppercase;
+
+    letter-spacing:2px;
+
+}
+
+.plan-price h3{
+
+    font-size:58px;
+
+    line-height:1;
+
+    color:white;
+
+    margin-bottom:8px;
+
+}
+
+.plan-price span{
+
+    color:var(--gray);
+
+}
+
+/* BOTÓN */
+
+.pricing-card .btn-primary{
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    position:relative;
+
+    z-index:2;
+
+}
