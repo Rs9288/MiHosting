@@ -2282,3 +2282,112 @@ PRICING
     z-index:2;
 
 }
+/*==================================
+CONFIGURADOR PERSONALIZADO
+==================================*/
+
+.custom-hero{
+
+    padding:120px 0 70px;
+
+    text-align:center;
+
+}
+
+.custom-hero h2{
+
+    font-size:54px;
+
+    font-weight:800;
+
+    margin:25px 0;
+
+}
+
+.custom-hero p{
+
+    max-width:750px;
+
+    margin:auto;
+
+    color:var(--gray);
+
+    font-size:19px;
+
+    line-height:1.8;
+
+}
+
+.custom-builder{
+
+    padding:20px 0 140px;
+
+}
+
+.builder-grid{
+
+    display:grid;
+
+    grid-template-columns:1.3fr .7fr;
+
+    gap:35px;
+
+}
+
+.builder-card,
+.builder-summary{
+
+    background:linear-gradient(
+        180deg,
+        rgba(18,28,48,.95),
+        rgba(10,15,28,.95)
+    );
+
+    border:1px solid rgba(255,255,255,.06);
+
+    border-radius:28px;
+
+    padding:40px;
+
+    transition:.3s;
+
+}
+
+.builder-card:hover,
+.builder-summary:hover{
+
+    transform:translateY(-6px);
+
+    border-color:rgba(20,136,255,.30);
+
+    box-shadow:0 20px 60px rgba(0,0,0,.35);
+
+}
+
+.builder-card h3,
+.builder-summary h3{
+
+    font-size:30px;
+
+    margin-bottom:15px;
+
+}
+
+.builder-card p,
+.builder-summary p{
+
+    color:var(--gray);
+
+    line-height:1.8;
+
+}
+
+@media(max-width:900px){
+
+    .builder-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
