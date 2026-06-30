@@ -654,7 +654,89 @@ CONFIGURADOR PERSONALIZADO
 
 </section>
 
-<script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+
+const ramPrices = {
+    1: 1.71,
+    2: 3.42,
+    4: 6.84,
+    6: 10.26,
+    8: 13.68
+};
+
+const storagePrices = {
+    30: 0,
+    50: 0.30,
+    70: 0.60,
+    90: 0.90,
+    120: 1.20
+};
+
+let selectedRam = 2;
+let selectedStorage = 50;
+
+function updateSummary(){
+
+    document.getElementById("summary-ram").textContent =
+        selectedRam + " GB";
+
+    document.getElementById("summary-storage").textContent =
+        selectedStorage + " GB NVMe";
+
+    const total =
+        ramPrices[selectedRam] +
+        storagePrices[selectedStorage];
+
+    document.getElementById("summary-price").textContent =
+        "$" + total.toFixed(2);
+
+}
+
+// RAM
+
+document.querySelectorAll("[data-ram]").forEach(button=>{
+
+    button.addEventListener("click",()=>{
+
+        document
+            .querySelectorAll("[data-ram]")
+            .forEach(btn=>btn.classList.remove("active"));
+
+        button.classList.add("active");
+
+        selectedRam = Number(button.dataset.ram);
+
+        updateSummary();
+
+    });
+
+});
+
+// DISCO
+
+document.querySelectorAll("[data-storage]").forEach(button=>{
+
+    button.addEventListener("click",()=>{
+
+        document
+            .querySelectorAll("[data-storage]")
+            .forEach(btn=>btn.classList.remove("active"));
+
+        button.classList.add("active");
+
+        selectedStorage = Number(button.dataset.storage);
+
+        updateSummary();
+
+    });
+
+});
+
+updateSummary();
+
+</script>
+    <script src="https://unpkg.com/lucide@latest"></script>
 
 <script>
 lucide.createIcons();
