@@ -615,7 +615,7 @@ CONFIGURADOR PERSONALIZADO
 
                 </div>
 
-            <div class="builder-option">
+<div class="builder-option">
 
     <h4>Puerto Dedicado</h4>
 
@@ -663,6 +663,15 @@ CONFIGURADOR PERSONALIZADO
                     <small>Total mensual</small>
                     <h2 id="summary-price">$3.42</h2>
                 </div>
+                <div class="summary-item">
+
+    <span>Puerto</span>
+
+    <strong id="summary-port">
+        Sin Puerto Dedicado
+    </strong>
+
+</div>
 
                 <a href="#" class="btn-primary">
                     Contratar
@@ -677,9 +686,8 @@ CONFIGURADOR PERSONALIZADO
 </section>
 
 
-    <script>
+<script>
 
-const ramPrices = {
 const ramPrices = {
     1: 1.71,
     2: 3.42,
@@ -692,7 +700,6 @@ const ramPrices = {
     9: 15.39,
     10: 17.10
 };
-};
 
 const storagePrices = {
     30: 0,
@@ -704,6 +711,7 @@ const storagePrices = {
 
 let selectedRam = 2;
 let selectedStorage = 50;
+let dedicatedPort = 0;
 
 function updateSummary(){
 
@@ -713,16 +721,24 @@ function updateSummary(){
     document.getElementById("summary-storage").textContent =
         selectedStorage + " GB NVMe";
 
+    document.getElementById("summary-port").textContent =
+        dedicatedPort === 4
+        ? "Con Puerto Dedicado"
+        : "Sin Puerto Dedicado";
+
     const total =
         ramPrices[selectedRam] +
-        storagePrices[selectedStorage];
+        storagePrices[selectedStorage] +
+        dedicatedPort;
 
     document.getElementById("summary-price").textContent =
         "$" + total.toFixed(2);
 
 }
 
+// =====================
 // RAM
+// =====================
 
 document.querySelectorAll("[data-ram]").forEach(button=>{
 
@@ -742,7 +758,9 @@ document.querySelectorAll("[data-ram]").forEach(button=>{
 
 });
 
+// =====================
 // DISCO
+// =====================
 
 document.querySelectorAll("[data-storage]").forEach(button=>{
 
@@ -755,6 +773,28 @@ document.querySelectorAll("[data-storage]").forEach(button=>{
         button.classList.add("active");
 
         selectedStorage = Number(button.dataset.storage);
+
+        updateSummary();
+
+    });
+
+});
+
+// =====================
+// PUERTO DEDICADO
+// =====================
+
+document.querySelectorAll("[data-port]").forEach(button=>{
+
+    button.addEventListener("click",()=>{
+
+        document
+            .querySelectorAll("[data-port]")
+            .forEach(btn=>btn.classList.remove("active"));
+
+        button.classList.add("active");
+
+        dedicatedPort = Number(button.dataset.port);
 
         updateSummary();
 
