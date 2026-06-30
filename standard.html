@@ -575,11 +575,17 @@ CONFIGURADOR PERSONALIZADO
                     <h4>Memoria RAM</h4>
 
                     <div class="option-buttons">
-                        <button class="option active" data-ram="1">1 GB</button>
-<button class="option" data-ram="2">2 GB</button>
-<button class="option" data-ram="4">4 GB</button>
-<button class="option" data-ram="6">6 GB</button>
-<button class="option" data-ram="8">8 GB</button>
+    <button class="option active" data-ram="1">1 GB</button>
+    <button class="option" data-ram="2">2 GB</button>
+    <button class="option" data-ram="3">3 GB</button>
+    <button class="option" data-ram="4">4 GB</button>
+    <button class="option" data-ram="5">5 GB</button>
+    <button class="option" data-ram="6">6 GB</button>
+    <button class="option" data-ram="7">7 GB</button>
+    <button class="option" data-ram="8">8 GB</button>
+    <button class="option" data-ram="9">9 GB</button>
+    <button class="option" data-ram="10">10 GB</button>
+
                     </div>
 
                 </div>
@@ -610,7 +616,24 @@ CONFIGURADOR PERSONALIZADO
                 </div>
 
             </div>
+            <div class="builder-option">
 
+    <h4>Puerto Dedicado</h4>
+
+    <div class="option-buttons">
+
+        <button class="option active" data-port="0">
+            Sin Puerto Dedicado
+        </button>
+
+        <button class="option" data-port="4">
+            Con Puerto Dedicado
+        </button>
+
+    </div>
+
+</div>
+         </div>
             <!-- RESUMEN -->
 
             <div class="builder-summary">
@@ -658,11 +681,18 @@ CONFIGURADOR PERSONALIZADO
     <script>
 
 const ramPrices = {
+const ramPrices = {
     1: 1.71,
     2: 3.42,
+    3: 5.13,
     4: 6.84,
+    5: 8.55,
     6: 10.26,
-    8: 13.68
+    7: 11.97,
+    8: 13.68,
+    9: 15.39,
+    10: 17.10
+};
 };
 
 const storagePrices = {
