@@ -2306,14 +2306,23 @@ CONFIGURADOR
 .builder-card,
 .builder-summary{
 
-    width:320px;
+    width:360px;
 
-    padding:32px;
+    padding:40px;
 
-    height:fit-content;
+    border-radius:28px;
+
+    background:linear-gradient(
+        180deg,
+        rgba(18,28,48,.95),
+        rgba(10,15,28,.95)
+    );
+
+    border:1px solid rgba(255,255,255,.06);
 
     position:sticky;
-    top:100px;
+
+    top:110px;
 
 }
 .custom-header{
