@@ -2293,10 +2293,15 @@ CONFIGURADOR
 }
 
 .builder-grid{
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 30px;
-    align-items: stretch;
+
+    display:grid;
+
+    grid-template-columns:minmax(700px,1fr) 360px;
+
+    gap:40px;
+
+    align-items:start;
+
 }
 .builder-card,
 .builder-summary{
@@ -2319,12 +2324,13 @@ CONFIGURADOR
     margin: 18px 0 14px;
 }
     
-/* TARJETAS */
+/* TARJETA CONFIGURADOR */
 
 .builder-card{
 
-    padding:40px;
-   height:fit-content;
+    width:100%;
+
+    padding:45px;
 
     border-radius:28px;
 
