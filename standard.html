@@ -1044,6 +1044,92 @@ document.querySelectorAll(".payment-card").forEach(card=>{
 
         document.getElementById("pay-method").textContent =
         selectedMethod;
+        const paymentInfo =
+document.getElementById("paymentInfo");
+
+switch(selectedMethod){
+
+case "PayPal":
+
+paymentInfo.innerHTML=`
+
+<h3>PayPal</h3>
+
+<p>
+
+Realiza el pago mediante PayPal.
+
+Después envía el comprobante en Discord para activar tu servidor.
+
+</p>
+
+`;
+
+break;
+
+case "Transferencia MX":
+
+paymentInfo.innerHTML=`
+
+<h3>Transferencia MX</h3>
+
+<p>
+
+Transferencia bancaria mediante SPEI.
+
+Después comparte el comprobante en Discord.
+
+</p>
+
+`;
+
+break;
+
+case "Pagos Bolivia":
+
+paymentInfo.innerHTML=`
+
+<h3>Pagos Bolivia</h3>
+
+<p>
+
+Aceptamos QR, Banco Unión y Tigo Money.
+
+Después envía el comprobante por Discord.
+
+</p>
+
+`;
+
+break;
+
+case "Criptomonedas":
+
+paymentInfo.innerHTML=`
+
+<h3>Criptomonedas</h3>
+
+<p>
+
+Aceptamos:
+
+• BTC
+
+• ETH
+
+• LTC
+
+• USDT
+
+Una vez realizado el pago envía el TXID en Discord.
+
+</p>
+
+`;
+
+break;
+
+}
 
     });
 
