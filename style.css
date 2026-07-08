@@ -2915,3 +2915,34 @@ INFORMACIÓN DE PAGO
     line-height:1.7;
 
 }
+/*=========================
+BOTÓN COPIAR DATOS
+=========================*/
+
+.copy-payment{
+
+margin-top:20px;
+
+width:100%;
+
+padding:15px;
+
+border-radius:14px;
+
+background:var(--primary);
+
+color:white;
+
+font-weight:700;
+
+transition:.25s;
+
+}
+
+.copy-payment:hover{
+
+transform:translateY(-2px);
+
+background:#2396ff;
+
+}
