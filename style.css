@@ -2882,3 +2882,36 @@ PAYMENT SECTION
     margin-top:15px;
 
 }
+/*==============================
+INFORMACIÓN DE PAGO
+==============================*/
+
+.payment-info{
+
+    margin:35px 0;
+
+    padding:25px;
+
+    border-radius:18px;
+
+    background:rgba(255,255,255,.03);
+
+    border:1px solid rgba(255,255,255,.06);
+
+}
+
+.payment-info h3{
+
+    margin-bottom:15px;
+
+    font-size:20px;
+
+}
+
+.payment-info p{
+
+    color:var(--gray);
+
+    line-height:1.7;
+
+}
