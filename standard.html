@@ -175,13 +175,25 @@
         <!-- Información del método seleccionado -->
 
         <div
-        class="payment-info"
-        id="paymentInfo">
+<div id="paymentInfo">
 
-            Selecciona un método de pago para ver las instrucciones.
+    <h3>Pedido listo para enviar</h3>
 
-        </div>
+    <p>
 
+        Se generará automáticamente un mensaje con toda la información de tu servidor.
+
+        Solo tendrás que copiarlo y pegarlo en nuestro canal de tickets.
+
+    </p>
+
+    <textarea
+        id="orderPreview"
+        readonly
+        rows="15">
+    </textarea>
+
+</div>
         <!-- Resumen -->
 
         <div class="payment-summary">
@@ -1209,135 +1221,7 @@ document.querySelectorAll(".payment-card").forEach(card=>{
 
         document.getElementById("pay-method").textContent =
         selectedMethod;
-
-        switch(selectedMethod){
-
-            case "PayPal":
-
-                paymentInfo.innerHTML=`
-
-                <h3>💙 PayPal</h3>
-
-                <p>
-                Correo:
-                <b>pagos@mihosting.com</b>
-                </p>
-
-                <button
-                class="copy-payment"
-                data-copy="pagos@mihosting.com">
-
-                Copiar correo
-
-                </button>
-
-                `;
-
-            break;
-
-            case "Transferencia MX":
-
-                paymentInfo.innerHTML=`
-
-                <h3>🏦 Transferencia MX</h3>
-
-                <p>
-
-                Banco: <b>BBVA</b>
-
-                <br><br>
-
-                Titular: <b>MiHosting</b>
-
-                <br><br>
-
-                CLABE:
-
-                <b>012345678901234567</b>
-
-                </p>
-
-                <button
-                class="copy-payment"
-                data-copy="012345678901234567">
-
-                Copiar CLABE
-
-                </button>
-
-                `;
-
-            break;
-
-            case "Pagos Bolivia":
-
-                paymentInfo.innerHTML=`
-
-                <h3>🇧🇴 Pagos Bolivia</h3>
-
-                <p>
-
-                Banco Unión
-
-                <br><br>
-
-                Titular:
-
-                <b>MiHosting</b>
-
-                <br><br>
-
-                Número:
-
-                <b>71234567</b>
-
-                </p>
-
-                <button
-                class="copy-payment"
-                data-copy="71234567">
-
-                Copiar número
-
-                </button>
-
-                `;
-
-            break;
-
-            case "Criptomonedas":
-
-                paymentInfo.innerHTML=`
-
-                <h3>₿ Criptomonedas</h3>
-
-                <p>
-
-                USDT (TRC20)
-
-                <br><br>
-
-                Wallet
-
-                <br>
-
-                <b>TXXXXXXXXXXXXXXXXXXXXXXXX</b>
-
-                </p>
-
-                <button
-                class="copy-payment"
-                data-copy="TXXXXXXXXXXXXXXXXXXXXXXXX">
-
-                Copiar Wallet
-
-                </button>
-
-                `;
-
-            break;
-
-        }
+updateOrderPreview();
 
         document.querySelectorAll(".copy-payment").forEach(btn=>{
 
