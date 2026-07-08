@@ -1024,6 +1024,40 @@ behavior:"smooth"
 });
 
 });
+    // =====================
+// MÉTODOS DE PAGO
+// =====================
+
+let selectedMethod = "";
+
+document.querySelectorAll(".payment-card").forEach(card=>{
+
+    card.addEventListener("click",()=>{
+
+        document
+        .querySelectorAll(".payment-card")
+        .forEach(c=>c.classList.remove("active"));
+
+        card.classList.add("active");
+
+        selectedMethod = card.dataset.method;
+
+        document.getElementById("pay-method").textContent =
+        selectedMethod;
+
+    });
+
+});
+    // =====================
+// COPIAR PEDIDO
+// =====================
+
+document
+.getElementById("copyOrder")
+.addEventListener("click",()=>{
+
+const text =
+`Hola
 // =====================
 // DISCO
 // =====================
