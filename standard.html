@@ -1020,7 +1020,55 @@ let selectedRam = 2;
 let selectedStorage = 50;
 let dedicatedPort = 0;
 let selectedMethod = "";
+//==================================
+// GENERAR MENSAJE
+//==================================
 
+function updateOrderPreview(){
+
+    const plan =
+    document.getElementById("pay-plan").textContent;
+
+    const ram =
+    document.getElementById("pay-ram").textContent;
+
+    const disk =
+    document.getElementById("pay-disk").textContent;
+
+    const port =
+    document.getElementById("pay-port").textContent;
+
+    const price =
+    document.getElementById("pay-price").textContent;
+
+    const message =
+`Hola, quiero contratar un servidor.
+
+━━━━━━━━━━━━━━━━━━━━━━
+
+📦 Plan: ${plan}
+
+🖥 CPU: Ryzen 7 5700G
+
+💾 RAM: ${ram}
+
+💽 Disco: ${disk}
+
+📍 Ubicación: Salt Lake City, Utah
+
+🔌 Puerto: ${port}
+
+💳 Método de pago: ${selectedMethod}
+
+💲 Precio: ${price}
+
+━━━━━━━━━━━━━━━━━━━━━━
+
+Quedo atento. ¡Gracias!`;
+
+    document.getElementById("orderPreview").value = message;
+
+}
 //==================================
 // RESUMEN DEL CONFIGURADOR
 //==================================
@@ -1153,6 +1201,7 @@ document.querySelectorAll(".contratar-btn").forEach(button=>{
         dedicatedPort === 4
         ? "Puerto dedicado"
         : "Sin puerto dedicado";
+        updateOrderPreview();
 
         // Ocultar planes
 
