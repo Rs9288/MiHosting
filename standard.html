@@ -912,6 +912,10 @@ FOOTER
 
 <script>
 
+//==================================
+// PRECIOS
+//==================================
+
 const ramPrices = {
     1: 1.71,
     2: 3.42,
@@ -933,44 +937,53 @@ const storagePrices = {
     120: 1.20
 };
 
+//==================================
+// VARIABLES
+//==================================
+
 let selectedRam = 2;
 let selectedStorage = 50;
 let dedicatedPort = 0;
+let selectedMethod = "";
+
+//==================================
+// RESUMEN DEL CONFIGURADOR
+//==================================
 
 function updateSummary(){
 
     document.getElementById("summary-ram").textContent =
-        selectedRam + " GB";
+    selectedRam + " GB";
 
     document.getElementById("summary-storage").textContent =
-        selectedStorage + " GB NVMe";
+    selectedStorage + " GB NVMe";
 
     document.getElementById("summary-port").textContent =
-        dedicatedPort === 4
-        ? "Con Puerto Dedicado"
-        : "Sin Puerto Dedicado";
+    dedicatedPort === 4
+    ? "Con Puerto Dedicado"
+    : "Sin Puerto Dedicado";
 
     const total =
-        ramPrices[selectedRam] +
-        storagePrices[selectedStorage] +
-        dedicatedPort;
+    ramPrices[selectedRam] +
+    storagePrices[selectedStorage] +
+    dedicatedPort;
 
     document.getElementById("summary-price").textContent =
-        "$" + total.toFixed(2);
+    "$" + total.toFixed(2);
 
 }
 
-// =====================
-// RAM
-// =====================
+//==================================
+// BOTONES RAM
+//==================================
 
 document.querySelectorAll("[data-ram]").forEach(button=>{
 
     button.addEventListener("click",()=>{
 
         document
-            .querySelectorAll("[data-ram]")
-            .forEach(btn=>btn.classList.remove("active"));
+        .querySelectorAll("[data-ram]")
+        .forEach(btn=>btn.classList.remove("active"));
 
         button.classList.add("active");
 
@@ -981,54 +994,143 @@ document.querySelectorAll("[data-ram]").forEach(button=>{
     });
 
 });
-// =====================
-// CONTRATAR
-// =====================
 
-const paymentSection =
-document.getElementById("paymentSection");
+//==================================
+// BOTONES DISCO
+//==================================
 
-const pricingSection =
-document.querySelector(".pricing");
+document.querySelectorAll("[data-storage]").forEach(button=>{
 
-document
-.querySelectorAll(".contratar-btn")
-.forEach(button=>{
+    button.addEventListener("click",()=>{
 
-button.addEventListener("click",()=>{
+        document
+        .querySelectorAll("[data-storage]")
+        .forEach(btn=>btn.classList.remove("active"));
 
-document.getElementById("pay-plan").textContent=
-button.dataset.plan;
+        button.classList.add("active");
 
-document.getElementById("pay-ram").textContent=
-button.dataset.ram;
+        selectedStorage = Number(button.dataset.storage);
 
-document.getElementById("pay-disk").textContent=
-button.dataset.disk;
+        updateSummary();
 
-document.getElementById("pay-price").textContent=
-button.dataset.price;
-
-pricingSection.style.display="none";
-
-paymentSection.classList.add("active");
-
-window.scrollTo({
-
-top:paymentSection.offsetTop-80,
-
-behavior:"smooth"
+    });
 
 });
 
-});
+//==================================
+// PUERTO DEDICADO
+//==================================
+
+document.querySelectorAll("[data-port]").forEach(button=>{
+
+    button.addEventListener("click",()=>{
+
+        document
+        .querySelectorAll("[data-port]")
+        .forEach(btn=>btn.classList.remove("active"));
+
+        button.classList.add("active");
+
+        dedicatedPort = Number(button.dataset.port);
+
+        updateSummary();
+
+    });
 
 });
-    // =====================
+
+updateSummary();
+    //==================================
+// CHECKOUT
+//==================================
+
+const pricingSection = document.querySelector(".pricing");
+const paymentSection = document.getElementById("paymentSection");
+
+//==================================
+// ABRIR CHECKOUT
+//==================================
+
+document.querySelectorAll(".contratar-btn").forEach(button=>{
+
+    button.addEventListener("click",()=>{
+
+        // Información del plan
+
+        document.getElementById("pay-plan").textContent =
+        button.dataset.plan;
+
+        document.getElementById("pay-price").textContent =
+        button.dataset.price;
+
+        // Información del configurador
+
+        document.getElementById("pay-ram").textContent =
+        selectedRam + " GB";
+
+        document.getElementById("pay-disk").textContent =
+        selectedStorage + " GB NVMe";
+
+        document.getElementById("pay-location").textContent =
+        "Salt Lake City, Utah";
+
+        document.getElementById("pay-port").textContent =
+        dedicatedPort === 4
+        ? "Puerto dedicado"
+        : "Sin puerto dedicado";
+
+        // Ocultar planes
+
+        pricingSection.style.display = "none";
+
+        // Mostrar checkout
+
+        paymentSection.classList.add("active");
+
+        // Scroll
+
+        window.scrollTo({
+
+            top: paymentSection.offsetTop - 80,
+
+            behavior: "smooth"
+
+        });
+
+    });
+
+});
+
+//==================================
+// VOLVER A PLANES
+//==================================
+
+const backButton = document.getElementById("backPlans");
+
+if(backButton){
+
+backButton.addEventListener("click",()=>{
+
+    paymentSection.classList.remove("active");
+
+    pricingSection.style.display = "block";
+
+    window.scrollTo({
+
+        top: pricingSection.offsetTop-80,
+
+        behavior:"smooth"
+
+    });
+
+});
+
+}
+    //==================================
 // MÉTODOS DE PAGO
-// =====================
+//==================================
 
-let selectedMethod = "";
+const paymentInfo = document.getElementById("paymentInfo");
 
 document.querySelectorAll(".payment-card").forEach(card=>{
 
@@ -1044,206 +1146,201 @@ document.querySelectorAll(".payment-card").forEach(card=>{
 
         document.getElementById("pay-method").textContent =
         selectedMethod;
-        const paymentInfo =
-document.getElementById("paymentInfo");
 
-switch(selectedMethod){
+        switch(selectedMethod){
 
-case "PayPal":
+            case "PayPal":
 
-paymentInfo.innerHTML=`
+                paymentInfo.innerHTML=`
 
-<h3>💙 PayPal</h3>
+                <h3>💙 PayPal</h3>
 
-<p>
-Correo:
-<b>pagos@mihosting.com</b>
-</p>
+                <p>
+                Correo:
+                <b>pagos@mihosting.com</b>
+                </p>
 
-<button class="copy-payment"
-data-copy="pagos@mihosting.com">
+                <button
+                class="copy-payment"
+                data-copy="pagos@mihosting.com">
 
-Copiar correo
+                Copiar correo
 
-</button>
+                </button>
 
-`;
+                `;
 
-break;
+            break;
 
-case "Transferencia MX":
+            case "Transferencia MX":
 
-paymentInfo.innerHTML=`
+                paymentInfo.innerHTML=`
 
-<h3>🏦 Transferencia MX</h3>
+                <h3>🏦 Transferencia MX</h3>
 
-<p>
+                <p>
 
-Banco:
-<b>BBVA</b>
+                Banco: <b>BBVA</b>
 
-<br><br>
+                <br><br>
 
-Titular:
-<b>MiHosting</b>
+                Titular: <b>MiHosting</b>
 
-<br><br>
+                <br><br>
 
-CLABE:
-<b>012345678901234567</b>
+                CLABE:
 
-</p>
+                <b>012345678901234567</b>
 
-<button
-class="copy-payment"
-data-copy="012345678901234567">
+                </p>
 
-Copiar CLABE
+                <button
+                class="copy-payment"
+                data-copy="012345678901234567">
 
-</button>
+                Copiar CLABE
 
-`;
+                </button>
 
-break;
+                `;
 
-case "Pagos Bolivia":
+            break;
 
-paymentInfo.innerHTML=`
+            case "Pagos Bolivia":
 
-<h3>🇧🇴 Pagos Bolivia</h3>
+                paymentInfo.innerHTML=`
 
-<p>
+                <h3>🇧🇴 Pagos Bolivia</h3>
 
-Banco Unión
+                <p>
 
-<br><br>
+                Banco Unión
 
-Titular:
-<b>MiHosting</b>
+                <br><br>
 
-<br><br>
+                Titular:
 
-Número:
-<b>71234567</b>
+                <b>MiHosting</b>
 
-</p>
+                <br><br>
 
-<button
-class="copy-payment"
-data-copy="71234567">
+                Número:
 
-Copiar número
+                <b>71234567</b>
 
-</button>
+                </p>
 
-`;
+                <button
+                class="copy-payment"
+                data-copy="71234567">
 
-break;
+                Copiar número
 
-case "Criptomonedas":
+                </button>
 
-paymentInfo.innerHTML=`
+                `;
 
-<h3>₿ Criptomonedas</h3>
+            break;
 
-<p>
+            case "Criptomonedas":
 
-USDT (TRC20)
+                paymentInfo.innerHTML=`
 
-<br><br>
+                <h3>₿ Criptomonedas</h3>
 
-Wallet:
+                <p>
 
-<b>TXXXXXXXXXXXXXXXXXXXXXXXXX</b>
+                USDT (TRC20)
 
-</p>
+                <br><br>
 
-<button
-class="copy-payment"
-data-copy="TXXXXXXXXXXXXXXXXXXXXXXXXX">
+                Wallet
 
-Copiar Wallet
+                <br>
 
-</button>
+                <b>TXXXXXXXXXXXXXXXXXXXXXXXX</b>
 
-`;
+                </p>
 
-break;
+                <button
+                class="copy-payment"
+                data-copy="TXXXXXXXXXXXXXXXXXXXXXXXX">
 
-}
+                Copiar Wallet
 
-document.querySelectorAll(".copy-payment").forEach(btn=>{
+                </button>
 
-btn.onclick=()=>{
+                `;
 
-navigator.clipboard.writeText(btn.dataset.copy);
+            break;
 
-btn.textContent="¡Copiado!";
+        }
+
+        document.querySelectorAll(".copy-payment").forEach(btn=>{
+
+            btn.onclick=()=>{
+
+                navigator.clipboard.writeText(btn.dataset.copy);
+
+                const oldText=btn.textContent;
+
+                btn.textContent="¡Copiado!";
+
+                setTimeout(()=>{
+
+                    btn.textContent=oldText;
+
+                },1500);
+
+            };
+
+        });
+
+    });
+
+});
+
+//==================================
+// COPIAR PEDIDO
+//==================================
+
+const copyOrder=document.getElementById("copyOrder");
+
+if(copyOrder){
+
+copyOrder.addEventListener("click",()=>{
+
+const pedido=
+
+`Hola, quiero contratar un servidor.
+
+📦 Plan: ${document.getElementById("pay-plan").textContent}
+
+💾 RAM: ${document.getElementById("pay-ram").textContent}
+
+💽 Disco: ${document.getElementById("pay-disk").textContent}
+
+📍 Ubicación: ${document.getElementById("pay-location").textContent}
+
+🔌 Puerto: ${document.getElementById("pay-port").textContent}
+
+💳 Método de pago: ${selectedMethod}
+
+💲 Precio: ${document.getElementById("pay-price").textContent}`;
+
+navigator.clipboard.writeText(pedido);
+
+copyOrder.textContent="¡Pedido copiado!";
 
 setTimeout(()=>{
 
-btn.textContent="Copiar";
+copyOrder.textContent="Copiar pedido";
 
-},1500);
+},2000);
+
+});
 
 }
-
-});
-    // =====================
-// COPIAR PEDIDO
-// =====================
-
-document
-.getElementById("copyOrder")
-.addEventListener("click",()=>{
-
-const text =
-`Hola`
-// =====================
-// DISCO
-// =====================
-
-document.querySelectorAll("[data-storage]").forEach(button=>{
-
-    button.addEventListener("click",()=>{
-
-        document
-            .querySelectorAll("[data-storage]")
-            .forEach(btn=>btn.classList.remove("active"));
-
-        button.classList.add("active");
-
-        selectedStorage = Number(button.dataset.storage);
-
-        updateSummary();
-
-    });
-
-});
-
-// =====================
-// PUERTO DEDICADO
-// =====================
-
-document.querySelectorAll("[data-port]").forEach(button=>{
-
-    button.addEventListener("click",()=>{
-
-        document
-            .querySelectorAll("[data-port]")
-            .forEach(btn=>btn.classList.remove("active"));
-
-        button.classList.add("active");
-
-        dedicatedPort = Number(button.dataset.port);
-
-        updateSummary();
-
-    });
-
-});
-
-updateSummary();
 
 </script>
     <script src="https://unpkg.com/lucide@latest"></script>
