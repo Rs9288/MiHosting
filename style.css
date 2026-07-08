@@ -2946,3 +2946,66 @@ transform:translateY(-2px);
 background:#2396ff;
 
 }
+/*==================================
+PEDIDO
+==================================*/
+
+#paymentInfo{
+
+    margin-top:40px;
+
+    background:rgba(255,255,255,.03);
+
+    border:1px solid rgba(255,255,255,.06);
+
+    border-radius:20px;
+
+    padding:30px;
+
+}
+
+#paymentInfo h3{
+
+    font-size:24px;
+
+    margin-bottom:12px;
+
+}
+
+#paymentInfo p{
+
+    color:var(--gray);
+
+    line-height:1.6;
+
+    margin-bottom:25px;
+
+}
+
+#orderPreview{
+
+    width:100%;
+
+    min-height:260px;
+
+    resize:none;
+
+    background:#0f1728;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:16px;
+
+    padding:20px;
+
+    color:#fff;
+
+    font-size:15px;
+
+    line-height:1.8;
+
+    font-family:monospace;
+
+    outline:none;
+
+}
