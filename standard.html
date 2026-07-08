@@ -1367,40 +1367,71 @@ document.querySelectorAll(".payment-card").forEach(card=>{
 // COPIAR PEDIDO
 //==================================
 
-const copyOrder=document.getElementById("copyOrder");
+const openTicket = document.getElementById("openTicket");
 
-if(copyOrder){
+if(openTicket){
 
-copyOrder.addEventListener("click",()=>{
+openTicket.addEventListener("click",()=>{
+    if(selectedMethod===""){
 
-const pedido=
+    alert("Primero selecciona un método de pago.");
 
-`Hola, quiero contratar un servidor.
+    return;
 
-📦 Plan: ${document.getElementById("pay-plan").textContent}
+}
 
-💾 RAM: ${document.getElementById("pay-ram").textContent}
+const pedido = `
+━━━━━━━━━━━━━━━━━━━━━━
+        MiHosting
+     NUEVO PEDIDO
+━━━━━━━━━━━━━━━━━━━━━━
 
-💽 Disco: ${document.getElementById("pay-disk").textContent}
+📦 Plan:
+${document.getElementById("pay-plan").textContent}
 
-📍 Ubicación: ${document.getElementById("pay-location").textContent}
+🖥 CPU:
+Ryzen 7 5700G
 
-🔌 Puerto: ${document.getElementById("pay-port").textContent}
+💾 RAM:
+${document.getElementById("pay-ram").textContent}
 
-💳 Método de pago: ${selectedMethod}
+💽 Disco:
+${document.getElementById("pay-disk").textContent}
 
-💲 Precio: ${document.getElementById("pay-price").textContent}`;
+📍 Ubicación:
+${document.getElementById("pay-location").textContent}
+
+🔌 Puerto:
+${document.getElementById("pay-port").textContent}
+
+💳 Método de pago:
+${selectedMethod}
+
+💲 Precio:
+${document.getElementById("pay-price").textContent}
+
+━━━━━━━━━━━━━━━━━━━━━━
+
+Gracias.
+`;
 
 navigator.clipboard.writeText(pedido);
+    window.open(discordInvite, "_blank");
 
-copyOrder.textContent="¡Pedido copiado!";
+openTicket.textContent = "¡Pedido copiado!";
 
 setTimeout(()=>{
 
-copyOrder.textContent="Copiar pedido";
+    openTicket.innerHTML = `
+        <i data-lucide="message-circle"></i>
+        Abrir Ticket y Copiar Pedido
+    `;
+
+    lucide.createIcons();
 
 },2000);
-
+    const discordInvite =
+"https://discord.gg/fg3Rsdt6v";
 });
 
 }
