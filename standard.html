@@ -981,7 +981,49 @@ document.querySelectorAll("[data-ram]").forEach(button=>{
     });
 
 });
+// =====================
+// CONTRATAR
+// =====================
 
+const paymentSection =
+document.getElementById("paymentSection");
+
+const pricingSection =
+document.querySelector(".pricing");
+
+document
+.querySelectorAll(".contratar-btn")
+.forEach(button=>{
+
+button.addEventListener("click",()=>{
+
+document.getElementById("pay-plan").textContent=
+button.dataset.plan;
+
+document.getElementById("pay-ram").textContent=
+button.dataset.ram;
+
+document.getElementById("pay-disk").textContent=
+button.dataset.disk;
+
+document.getElementById("pay-price").textContent=
+button.dataset.price;
+
+pricingSection.style.display="none";
+
+paymentSection.classList.add("active");
+
+window.scrollTo({
+
+top:paymentSection.offsetTop-80,
+
+behavior:"smooth"
+
+});
+
+});
+
+});
 // =====================
 // DISCO
 // =====================
