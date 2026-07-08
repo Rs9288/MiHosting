@@ -1053,15 +1053,19 @@ case "PayPal":
 
 paymentInfo.innerHTML=`
 
-<h3>PayPal</h3>
+<h3>💙 PayPal</h3>
 
 <p>
-
-Realiza el pago mediante PayPal.
-
-Después envía el comprobante en Discord para activar tu servidor.
-
+Correo:
+<b>pagos@mihosting.com</b>
 </p>
+
+<button class="copy-payment"
+data-copy="pagos@mihosting.com">
+
+Copiar correo
+
+</button>
 
 `;
 
@@ -1071,15 +1075,32 @@ case "Transferencia MX":
 
 paymentInfo.innerHTML=`
 
-<h3>Transferencia MX</h3>
+<h3>🏦 Transferencia MX</h3>
 
 <p>
 
-Transferencia bancaria mediante SPEI.
+Banco:
+<b>BBVA</b>
 
-Después comparte el comprobante en Discord.
+<br><br>
+
+Titular:
+<b>MiHosting</b>
+
+<br><br>
+
+CLABE:
+<b>012345678901234567</b>
 
 </p>
+
+<button
+class="copy-payment"
+data-copy="012345678901234567">
+
+Copiar CLABE
+
+</button>
 
 `;
 
@@ -1089,15 +1110,31 @@ case "Pagos Bolivia":
 
 paymentInfo.innerHTML=`
 
-<h3>Pagos Bolivia</h3>
+<h3>🇧🇴 Pagos Bolivia</h3>
 
 <p>
 
-Aceptamos QR, Banco Unión y Tigo Money.
+Banco Unión
 
-Después envía el comprobante por Discord.
+<br><br>
+
+Titular:
+<b>MiHosting</b>
+
+<br><br>
+
+Número:
+<b>71234567</b>
 
 </p>
+
+<button
+class="copy-payment"
+data-copy="71234567">
+
+Copiar número
+
+</button>
 
 `;
 
@@ -1107,23 +1144,27 @@ case "Criptomonedas":
 
 paymentInfo.innerHTML=`
 
-<h3>Criptomonedas</h3>
+<h3>₿ Criptomonedas</h3>
 
 <p>
 
-Aceptamos:
+USDT (TRC20)
 
-• BTC
+<br><br>
 
-• ETH
+Wallet:
 
-• LTC
-
-• USDT
-
-Una vez realizado el pago envía el TXID en Discord.
+<b>TXXXXXXXXXXXXXXXXXXXXXXXXX</b>
 
 </p>
+
+<button
+class="copy-payment"
+data-copy="TXXXXXXXXXXXXXXXXXXXXXXXXX">
+
+Copiar Wallet
+
+</button>
 
 `;
 
@@ -1131,18 +1172,23 @@ break;
 
 }
 
-    });
+document.querySelectorAll(".copy-payment").forEach(btn=>{
+
+btn.onclick=()=>{
+
+navigator.clipboard.writeText(btn.dataset.copy);
+
+btn.textContent="¡Copiado!";
+
+setTimeout(()=>{
+
+btn.textContent="Copiar";
+
+},1500);
+
+}
 
 });
-    <div class="payment-info" id="paymentInfo">
-
-    <h3>Información de pago</h3>
-
-    <p>
-        Selecciona un método de pago para ver las instrucciones.
-    </p>
-
-</div>
     // =====================
 // COPIAR PEDIDO
 // =====================
